@@ -1,7 +1,7 @@
 namespace PterodactylDotNet.API.V10;
 
 public class ApplicationServers {
-    private FlurlClient _client { get; init; } 
+    private FlurlClient _client { get; } 
 
     public ApplicationServers(FlurlClient client) {
         this._client = client;
@@ -14,7 +14,7 @@ public class ApplicationServers {
         if (response.StatusCode != successfulStatusCode) throw new PterodactylUnknownStatusCode(response.StatusCode);
     }
 
-    public ApplicationServersDatabases Databases { get; init; }
+    public ApplicationServersDatabases Databases { get; }
     
     /// <summary>
     ///     Retrieves all servers.

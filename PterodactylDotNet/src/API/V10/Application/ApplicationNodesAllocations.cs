@@ -1,7 +1,7 @@
 namespace PterodactylDotNet.API.V10;
 
 public class ApplicationNodesAllocations {
-    private FlurlClient _client { get; init; } 
+    private FlurlClient _client { get; } 
 
     public ApplicationNodesAllocations(FlurlClient client) {
         this._client = client;

@@ -1,11 +1,11 @@
 namespace PterodactylDotNet;
 
 public class PterodactylClient {
-    private FlurlClient _client { get; init; }
+    private FlurlClient _client { get; }
 
-    private string _hostname { get; init; }
-    private string _token { get; init; }
-    private PterodactylTokenType _tokenType { get; init; }
+    private string _hostname { get; }
+    private string _token { get; }
+    private PterodactylTokenType _tokenType { get; }
     
     public PterodactylClient(string hostname, string token, PterodactylTokenType tokenType) {
         this._hostname = hostname;
@@ -22,6 +22,6 @@ public class PterodactylClient {
         this.Account = new ClientAccount(this._client);
     }
 
-    public ClientServer Servers { get; init; }
-    public ClientAccount Account { get; init; }
+    public ClientServer Servers { get; }
+    public ClientAccount Account { get; }
 }

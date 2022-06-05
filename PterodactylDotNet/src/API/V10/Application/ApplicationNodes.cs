@@ -1,7 +1,7 @@
 namespace PterodactylDotNet.API.V10;
 
 public class ApplicationNodes {
-    private FlurlClient _client { get; init; } 
+    private FlurlClient _client { get; } 
 
     public ApplicationNodes(FlurlClient client) {
         this._client = client;
@@ -14,7 +14,7 @@ public class ApplicationNodes {
         if (response.StatusCode != successfulStatusCode) throw new PterodactylUnknownStatusCode(response.StatusCode);
     }
 
-    public ApplicationNodesAllocations Allocations { get; init; }
+    public ApplicationNodesAllocations Allocations { get; }
     
     /// <summary>
     ///     Retrieves a list of nodes.

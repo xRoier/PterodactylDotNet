@@ -1,7 +1,7 @@
 namespace PterodactylDotNet.API.V10;
 
 public class ClientServerSubusers {
-    private FlurlClient _client { get; init; } 
+    private FlurlClient _client { get; } 
 
     public ClientServerSubusers(FlurlClient client) {
         this._client = client;

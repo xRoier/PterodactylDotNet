@@ -10,8 +10,8 @@ namespace PterodactylDotNet;
 public class PterodactylApi {
     private PterodactylTokenType _tokenType;
 
-    public PterodactylApplication Application { get; init; }
-    public PterodactylClient Client { get; init; }
+    public PterodactylApplication Application { get; }
+    public PterodactylClient Client { get; }
 
     public PterodactylApi(string hostname, string token, PterodactylTokenType tokenType) {
         this._tokenType = tokenType;

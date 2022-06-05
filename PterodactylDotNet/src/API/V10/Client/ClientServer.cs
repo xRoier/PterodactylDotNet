@@ -1,7 +1,7 @@
 namespace PterodactylDotNet.API.V10;
 
 public class ClientServer {
-    private FlurlClient _client { get; init; } 
+    private FlurlClient _client { get; } 
 
     public ClientServer(FlurlClient client) {
         this._client = client;
@@ -16,14 +16,14 @@ public class ClientServer {
         this.Databases = new ClientServerDatabases(this._client);
     }
 
-    public ClientServerSettings Settings { get; init; }
-    public ClientServerStartup Startup { get; init; }
-    public ClientServerBackups Backups { get; init; }
-    public ClientServerSubusers Users { get; init; }
-    public ClientServerNetwork Network { get; init; }
-    public ClientServerSchedules Schedules { get; init; }
-    public ClientServerFiles Files { get; init; }
-    public ClientServerDatabases Databases { get; init; }
+    public ClientServerSettings Settings { get; }
+    public ClientServerStartup Startup { get; }
+    public ClientServerBackups Backups { get; }
+    public ClientServerSubusers Users { get; }
+    public ClientServerNetwork Network { get; }
+    public ClientServerSchedules Schedules { get; }
+    public ClientServerFiles Files { get; }
+    public ClientServerDatabases Databases { get; }
 
     private void raiseForStatus(int successfulStatusCode, IFlurlResponse response, string? serverId = null) {
         if (response.StatusCode == 404 && serverId is not null) 
