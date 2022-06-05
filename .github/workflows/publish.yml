@@ -28,4 +28,4 @@ jobs:
         run: dotnet pack PterodactylDotNet/PterodactylDotNet.csproj -c Release
 
       - name: Publish to Nuget
-        run: dotnet nuget push PterodactylDotNet/PterodactylDotNet/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+        run: dotnet nuget push /home/runner/work/PterodactylDotNet/PterodactylDotNet/PterodactylDotNet/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
