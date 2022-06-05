@@ -1,0 +1,31 @@
+name: Publish to Nuget
+
+on: 
+  push:
+    tags:
+      - '*'
+
+jobs:
+  publish:
+    name: Build, Pack & Publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      
+      - name: Bump Version
+        run: sed -i "s+<Version>0.0.0</Version>+<Version>${{github.ref_name}}</Version>+g" PterodactylDotNet/PterodactylDotNet.csproj
+
+      - name: Setup DotNet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Build
+        run: dotnet build PterodactylDotNet/PterodactylDotNet.csproj -c Release
+
+      - name: Pack
+        run: dotnet pack PterodactylDotNet/PterodactylDotNet.csproj -c Release
+
+      - name: Publish to Nuget
+        run: dotnet nuget push PterodactylDotNet/PterodactylDotNet/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
