@@ -1,4 +1,4 @@
-![Banner](https://github.com/Winter/PterodactylDotNet/.github/resources/banner.png)
+![Banner](https://raw.githubusercontent.com/Winter/PterodactylDotNet/master/.github/resources/banner.png)
 
 # PterodactylDotNet
 
