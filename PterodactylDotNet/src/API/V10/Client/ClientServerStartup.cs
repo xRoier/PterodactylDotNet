@@ -40,7 +40,7 @@ public class ClientServerStartup {
     /// <param name="cancellationToken">The token to monitor for cancellation requests.</param>
     /// <exception cref="PterodactylUnauthorized" />
     /// <exception cref="PterodactylUnknownStatusCode" />
-    public async Task<VariableObject?> ReinstallServerAsync(string serverId, string key, string value, CancellationToken cancellationToken = default) {
+    public async Task<VariableObject?> UpdateVariableAsync(string serverId, string key, string value, CancellationToken cancellationToken = default) {
         var result = await _client.Request("api", "client", "servers", serverId, "startup", "variable")
             .PutJsonAsync(new UpdateVariableRequest { Key = key, Value = value }, cancellationToken);
         
