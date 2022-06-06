@@ -158,7 +158,7 @@ public class ClientServerFiles {
     /// <param name="cancellationToken">The token to monitor for cancellation requests.</param>
     /// <exception cref="PterodactylUnauthorized" />
     /// <exception cref="PterodactylUnknownStatusCode" />
-    public async Task DeleteFileAsync(string serverId, DecompressFileRequest data, CancellationToken cancellationToken = default) {
+    public async Task DeleteFileAsync(string serverId, DeleteFileRequest data, CancellationToken cancellationToken = default) {
         var result = await _client.Request("api", "client", "servers", serverId, "files", "delete")
             .PostJsonAsync(data, cancellationToken);
         
