@@ -8,7 +8,7 @@ public class FileObject {
     public string Mode { get; set; } = null!;
 
     [JsonProperty("size")]
-    public int Size { get; set; }
+    public ulong Size { get; set; }
 
     [JsonProperty("is_file")]
     public bool IsFile { get; set; }
